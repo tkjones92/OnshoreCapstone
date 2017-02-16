@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "DisplayCustomer";
+}
+
+<h2>Welcome</h2>
+<ul class="nav navbar-nav navbar-right">
+    <li><h4>Welcome @Session["UserName"]</h4></li>
+</ul>
+@{
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+
+            <h1>Please Browse Products</h1>
+            <h2>
+                @Html.ActionLink("The Item Shop", "DisplayInventoryCustomer", "Inventory", new { area = "areaName", id = Session["ID"] }, null) |
+
+                @Html.ActionLink("Manage Account", "DisplayUsers", "User", new { area = "areaName", id = Session["ID"] }, null)
+            </h2>
+    </div>
+}
+
+@if (User.Identity != null)
+{
+    @Html.ActionLink("Logout", "Logout");
+}

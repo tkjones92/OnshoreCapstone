@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "DisplayAdmin";
+}
+
+<h1>Please select what you would like to Manage Below</h1>
+
+<ul class="nav navbar-nav navbar-right">
+    <li><h4>Welcome @Session["UserName"]</h4></li>
+</ul>
+@{
+    var user = Session["UserName"] as UserControl;
+<h2>@Html.ActionLink("Manage Inventory", "DisplayInventory", "Inventory", new { area = "areaName", id = Session["ID"] }, null) |
+
+    @Html.ActionLink("Manage Employees", "DisplayListofEmployees", "User", new { area = "areaName", id = Session["ID"] }, null) |
+    
+    @Html.ActionLink("Manage Customers", "DisplayListofCustomers", "User", new { area = "areaName", id = Session["ID"] }, null) 
+
+     </h2>
+}
+@if (User.Identity != null)
+{
+    @Html.ActionLink("Logout", "Logout");
+}

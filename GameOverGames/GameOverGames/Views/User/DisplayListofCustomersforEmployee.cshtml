@@ -1,0 +1,57 @@
+﻿@model IEnumerable<GameOverGames.Controllers.UserVM>
+
+@{
+    ViewBag.Title = "DisplayListofCustomersforEmployee";
+}
+
+<h2>Current Customers</h2>
+<ul class="nav navbar-nav navbar-right">
+    <li><h4> @Session["UserName"]</h4></li>
+</ul>
+@{
+    var user = Session["UserName"] as UserControl;
+    <p>
+        @Html.ActionLink("Create New", "AddUser")
+    </p>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayName("First Name")
+            </th>
+            <th>
+                @Html.DisplayName("Last Name")
+            </th>
+            <th>
+                @Html.DisplayName("User Name")
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.userFirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.userLastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.userName)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "UpdateUserCustomer", new { id = item.userID }) |
+                    @Html.ActionLink("Details", "UserDetails", new { id = item.userID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.userID })
+                </td>
+            </tr>
+        }
+    </table>
+}
+@if (User.Identity != null)
+{
+    @Html.ActionLink("Logout", "Logout");
+
+}

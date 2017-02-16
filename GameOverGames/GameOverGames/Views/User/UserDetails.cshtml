@@ -1,0 +1,117 @@
+﻿@model GameOverGames.Controllers.UserVM
+
+@{
+    ViewBag.Title = "UserDetails";
+}
+
+<h2>UserDetails</h2>
+@Html.AntiForgeryToken()
+
+<ul class="nav navbar-nav navbar-right">
+    <li><h4> @Session["UserName"]</h4></li>
+</ul>
+    @{
+        var user = Session["UserName"] as UserControl;
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayName("First Name")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Last Name")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("UserName")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userName)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Password")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userPassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Email")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("PhoneNumber")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userPhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Street")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userStreet)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("City")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("State")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userState)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Zipcode")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userZipcode)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Position")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userPosition)
+        </dd>
+
+    </dl>
+</div>
+}
+<p>
+    @Html.ActionLink("Back to List", "DisplayListofCustomers")
+</p>
+@if (User.Identity != null)
+{
+    @Html.ActionLink("Logout", "Logout");
+
+}

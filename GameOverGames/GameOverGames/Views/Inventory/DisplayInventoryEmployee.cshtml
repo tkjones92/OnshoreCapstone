@@ -1,0 +1,47 @@
+﻿@model IEnumerable<GameOverGames.Models.InventoryVM>
+
+@{
+    ViewBag.Title = "DisplayInventoryEmployee";
+}
+
+<h2>Current Inventory</h2>
+<ul class="nav navbar-nav navbar-right">
+    <li><h4> @Session["UserName"]</h4></li>
+</ul>
+@{
+    var user = Session["UserName"] as UserControl;
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Product Name")
+        </th>
+        <th>
+            @Html.DisplayName("Price")
+        </th>
+        <th>
+            @Html.DisplayName("Stock")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.inventoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.inventoryPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.inventoryStock)
+        </td>
+    </tr>
+}
+
+</table>
+    }
+@if (User.Identity != null)
+{
+    @Html.ActionLink("Logout", "Logout");
+}

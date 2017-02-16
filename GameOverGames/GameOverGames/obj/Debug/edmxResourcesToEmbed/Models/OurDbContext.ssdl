@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GameOverGames.Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="inventoryID" />
+    </Key>
+    <Property Name="inventoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="inventoryName" Type="varchar" MaxLength="50" />
+    <Property Name="inventoryPrice" Type="int" />
+    <Property Name="inventoryStock" Type="int" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userFirstName" Type="nvarchar" MaxLength="150" />
+    <Property Name="userLastName" Type="nvarchar" MaxLength="150" />
+    <Property Name="userName" Type="nvarchar" MaxLength="150" />
+    <Property Name="userPassword" Type="nvarchar" MaxLength="150" />
+    <Property Name="userEmail" Type="nvarchar" MaxLength="150" />
+    <Property Name="userPhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="userStreet" Type="nvarchar" MaxLength="150" />
+    <Property Name="userCity" Type="nvarchar" MaxLength="150" />
+    <Property Name="userState" Type="nvarchar" MaxLength="150" />
+    <Property Name="userZipcode" Type="int" />
+  </EntityType>
+  <Function Name="AddInventory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inventoryName" Type="varchar" Mode="In" />
+    <Parameter Name="inventoryPrice" Type="int" Mode="In" />
+    <Parameter Name="inventoryStock" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AddUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userFirstName" Type="varchar" Mode="In" />
+    <Parameter Name="userLastName" Type="varchar" Mode="In" />
+    <Parameter Name="userName" Type="nvarchar" Mode="In" />
+    <Parameter Name="userPassword" Type="nvarchar" Mode="In" />
+    <Parameter Name="userEmail" Type="nvarchar" Mode="In" />
+    <Parameter Name="userPhoneNumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="userStreet" Type="nvarchar" Mode="In" />
+    <Parameter Name="userCity" Type="nvarchar" Mode="In" />
+    <Parameter Name="userState" Type="nvarchar" Mode="In" />
+    <Parameter Name="userZipcode" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteInventory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inventoryID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DisplayInventory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="DisplayUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetInventoryInfoByInventoryID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inventoryID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetUserInfoByUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="InventoryDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inventoryName" Type="varchar" Mode="In" />
+    <Parameter Name="inventoryPrice" Type="int" Mode="In" />
+    <Parameter Name="inventoryStock" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UpdateInventory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inventoryID" Type="int" Mode="In" />
+    <Parameter Name="inventoryName" Type="varchar" Mode="In" />
+    <Parameter Name="inventoryPrice" Type="int" Mode="In" />
+    <Parameter Name="inventoryStock" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UpdateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userID" Type="int" Mode="In" />
+    <Parameter Name="userFirstName" Type="varchar" Mode="In" />
+    <Parameter Name="userLastName" Type="varchar" Mode="In" />
+    <Parameter Name="userName" Type="nvarchar" Mode="In" />
+    <Parameter Name="userPassword" Type="nvarchar" Mode="In" />
+    <Parameter Name="userEmail" Type="nvarchar" Mode="In" />
+    <Parameter Name="userPhoneNumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="userStreet" Type="nvarchar" Mode="In" />
+    <Parameter Name="userCity" Type="nvarchar" Mode="In" />
+    <Parameter Name="userState" Type="nvarchar" Mode="In" />
+    <Parameter Name="userZipcode" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UserDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userFirstName" Type="varchar" Mode="In" />
+    <Parameter Name="userLastName" Type="varchar" Mode="In" />
+    <Parameter Name="userName" Type="nvarchar" Mode="In" />
+    <Parameter Name="userPassword" Type="nvarchar" Mode="In" />
+    <Parameter Name="userEmail" Type="nvarchar" Mode="In" />
+    <Parameter Name="userPhoneNumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="userStreet" Type="nvarchar" Mode="In" />
+    <Parameter Name="userCity" Type="nvarchar" Mode="In" />
+    <Parameter Name="userState" Type="nvarchar" Mode="In" />
+    <Parameter Name="userZipcode" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="GameOverGamesModelsStoreContainer">
+    <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

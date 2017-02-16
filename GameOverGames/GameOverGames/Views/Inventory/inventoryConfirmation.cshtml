@@ -1,0 +1,14 @@
+﻿
+@model GameOverGames.Controllers.UserVM
+@{
+    ViewBag.Title = "inventoryConfirmation";
+}
+
+<h2>Product Added</h2>
+
+<h3>@Html.ActionLink("Back to List", "DisplayInventory")</h3>
+
+<div>
+    <h3>@Html.ActionLink("Back to Admin Page", "DisplayAdmin", "User", new { area = "areaName", id = Session["ID"] }, null)</h3>
+</div>
+

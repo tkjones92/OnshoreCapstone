@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GameOverGamesModelsStoreContainer" CdmEntityContainer="CapstoneStoreEntities">
+    <EntitySetMapping Name="Inventories">
+      <EntityTypeMapping TypeName="GameOverGames.Models.Inventory">
+        <MappingFragment StoreEntitySet="Inventory">
+          <ScalarProperty Name="inventoryID" ColumnName="inventoryID" />
+          <ScalarProperty Name="inventoryName" ColumnName="inventoryName" />
+          <ScalarProperty Name="inventoryPrice" ColumnName="inventoryPrice" />
+          <ScalarProperty Name="inventoryStock" ColumnName="inventoryStock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="GameOverGames.Models.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="userFirstName" ColumnName="userFirstName" />
+          <ScalarProperty Name="userLastName" ColumnName="userLastName" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="userPassword" ColumnName="userPassword" />
+          <ScalarProperty Name="userEmail" ColumnName="userEmail" />
+          <ScalarProperty Name="userPhoneNumber" ColumnName="userPhoneNumber" />
+          <ScalarProperty Name="userStreet" ColumnName="userStreet" />
+          <ScalarProperty Name="userCity" ColumnName="userCity" />
+          <ScalarProperty Name="userState" ColumnName="userState" />
+          <ScalarProperty Name="userZipcode" ColumnName="userZipcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AddInventory" FunctionName="GameOverGames.Models.Store.AddInventory" />
+    <FunctionImportMapping FunctionImportName="AddUser" FunctionName="GameOverGames.Models.Store.AddUser" />
+    <FunctionImportMapping FunctionImportName="DeleteInventory" FunctionName="GameOverGames.Models.Store.DeleteInventory" />
+    <FunctionImportMapping FunctionImportName="DeleteUser" FunctionName="GameOverGames.Models.Store.DeleteUser" />
+    <FunctionImportMapping FunctionImportName="DisplayInventory" FunctionName="GameOverGames.Models.Store.DisplayInventory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GameOverGames.Models.DisplayInventory_Result">
+          <ScalarProperty Name="inventoryID" ColumnName="inventoryID" />
+          <ScalarProperty Name="inventoryName" ColumnName="inventoryName" />
+          <ScalarProperty Name="inventoryPrice" ColumnName="inventoryPrice" />
+          <ScalarProperty Name="inventoryStock" ColumnName="inventoryStock" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DisplayUser" FunctionName="GameOverGames.Models.Store.DisplayUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GameOverGames.Models.DisplayUser_Result">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="userFirstName" ColumnName="userFirstName" />
+          <ScalarProperty Name="userLastName" ColumnName="userLastName" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="userPassword" ColumnName="userPassword" />
+          <ScalarProperty Name="userEmail" ColumnName="userEmail" />
+          <ScalarProperty Name="userPhoneNumber" ColumnName="userPhoneNumber" />
+          <ScalarProperty Name="userStreet" ColumnName="userStreet" />
+          <ScalarProperty Name="userCity" ColumnName="userCity" />
+          <ScalarProperty Name="userState" ColumnName="userState" />
+          <ScalarProperty Name="userZipcode" ColumnName="userZipcode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetInventoryInfoByInventoryID" FunctionName="GameOverGames.Models.Store.GetInventoryInfoByInventoryID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GameOverGames.Models.GetInventoryInfoByInventoryID_Result">
+          <ScalarProperty Name="inventoryID" ColumnName="inventoryID" />
+          <ScalarProperty Name="inventoryName" ColumnName="inventoryName" />
+          <ScalarProperty Name="inventoryPrice" ColumnName="inventoryPrice" />
+          <ScalarProperty Name="inventoryStock" ColumnName="inventoryStock" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserInfoByUserID" FunctionName="GameOverGames.Models.Store.GetUserInfoByUserID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GameOverGames.Models.GetUserInfoByUserID_Result">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="userFirstName" ColumnName="userFirstName" />
+          <ScalarProperty Name="userLastName" ColumnName="userLastName" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="userPassword" ColumnName="userPassword" />
+          <ScalarProperty Name="userEmail" ColumnName="userEmail" />
+          <ScalarProperty Name="userPhoneNumber" ColumnName="userPhoneNumber" />
+          <ScalarProperty Name="userStreet" ColumnName="userStreet" />
+          <ScalarProperty Name="userCity" ColumnName="userCity" />
+          <ScalarProperty Name="userState" ColumnName="userState" />
+          <ScalarProperty Name="userZipcode" ColumnName="userZipcode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="InventoryDetails" FunctionName="GameOverGames.Models.Store.InventoryDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GameOverGames.Models.InventoryDetails_Result">
+          <ScalarProperty Name="inventoryID" ColumnName="inventoryID" />
+          <ScalarProperty Name="inventoryName" ColumnName="inventoryName" />
+          <ScalarProperty Name="inventoryPrice" ColumnName="inventoryPrice" />
+          <ScalarProperty Name="inventoryStock" ColumnName="inventoryStock" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UpdateInventory" FunctionName="GameOverGames.Models.Store.UpdateInventory" />
+    <FunctionImportMapping FunctionImportName="UpdateUser" FunctionName="GameOverGames.Models.Store.UpdateUser" />
+    <FunctionImportMapping FunctionImportName="UserDetails" FunctionName="GameOverGames.Models.Store.UserDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GameOverGames.Models.UserDetails_Result">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="userFirstName" ColumnName="userFirstName" />
+          <ScalarProperty Name="userLastName" ColumnName="userLastName" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="userPassword" ColumnName="userPassword" />
+          <ScalarProperty Name="userEmail" ColumnName="userEmail" />
+          <ScalarProperty Name="userPhoneNumber" ColumnName="userPhoneNumber" />
+          <ScalarProperty Name="userStreet" ColumnName="userStreet" />
+          <ScalarProperty Name="userCity" ColumnName="userCity" />
+          <ScalarProperty Name="userState" ColumnName="userState" />
+          <ScalarProperty Name="userZipcode" ColumnName="userZipcode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

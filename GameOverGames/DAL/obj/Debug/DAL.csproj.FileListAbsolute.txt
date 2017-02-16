@@ -1,0 +1,10 @@
+C:\Users\Trevor\Documents\Visual Studio 2015\Projects\GameOverGames\DAL\bin\Debug\DAL.dll
+C:\Users\Trevor\Documents\Visual Studio 2015\Projects\GameOverGames\DAL\bin\Debug\DAL.pdb
+C:\Users\Trevor\Documents\Visual Studio 2015\Projects\GameOverGames\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Trevor\Documents\Visual Studio 2015\Projects\GameOverGames\DAL\obj\Debug\DAL.dll
+C:\Users\Trevor\Documents\Visual Studio 2015\Projects\GameOverGames\DAL\obj\Debug\DAL.pdb
+C:\Users\Trevor\Documents\Visual Studio 2015\Projects\GameOverGames\DAL\bin\Debug\DAL.dll.config
+C:\Users\Trevor\Documents\Visual Studio 2015\Projects\GameOverGames\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Trevor\Documents\Visual Studio 2015\Projects\GameOverGames\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Trevor\Documents\Visual Studio 2015\Projects\GameOverGames\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Trevor\Documents\Visual Studio 2015\Projects\GameOverGames\DAL\bin\Debug\EntityFramework.SqlServer.xml

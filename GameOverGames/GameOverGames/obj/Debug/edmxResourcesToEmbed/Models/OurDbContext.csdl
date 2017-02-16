@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GameOverGames.Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="inventoryID" />
+    </Key>
+    <Property Name="inventoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="inventoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="inventoryPrice" Type="Int32" />
+    <Property Name="inventoryStock" Type="Int32" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userFirstName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="userLastName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="userName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="userPassword" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="userEmail" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="userPhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="userStreet" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="userCity" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="userState" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="userZipcode" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="CapstoneStoreEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Inventories" EntityType="Self.Inventory" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <FunctionImport Name="AddInventory">
+      <Parameter Name="inventoryName" Mode="In" Type="String" />
+      <Parameter Name="inventoryPrice" Mode="In" Type="Int32" />
+      <Parameter Name="inventoryStock" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AddUser">
+      <Parameter Name="userFirstName" Mode="In" Type="String" />
+      <Parameter Name="userLastName" Mode="In" Type="String" />
+      <Parameter Name="userName" Mode="In" Type="String" />
+      <Parameter Name="userPassword" Mode="In" Type="String" />
+      <Parameter Name="userEmail" Mode="In" Type="String" />
+      <Parameter Name="userPhoneNumber" Mode="In" Type="String" />
+      <Parameter Name="userStreet" Mode="In" Type="String" />
+      <Parameter Name="userCity" Mode="In" Type="String" />
+      <Parameter Name="userState" Mode="In" Type="String" />
+      <Parameter Name="userZipcode" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteInventory">
+      <Parameter Name="inventoryID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteUser">
+      <Parameter Name="userID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DisplayInventory" ReturnType="Collection(GameOverGames.Models.DisplayInventory_Result)" />
+    <FunctionImport Name="DisplayUser" ReturnType="Collection(GameOverGames.Models.DisplayUser_Result)" />
+    <FunctionImport Name="GetInventoryInfoByInventoryID" ReturnType="Collection(GameOverGames.Models.GetInventoryInfoByInventoryID_Result)">
+      <Parameter Name="inventoryID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetUserInfoByUserID" ReturnType="Collection(GameOverGames.Models.GetUserInfoByUserID_Result)">
+      <Parameter Name="userID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="InventoryDetails" ReturnType="Collection(GameOverGames.Models.InventoryDetails_Result)">
+      <Parameter Name="inventoryName" Mode="In" Type="String" />
+      <Parameter Name="inventoryPrice" Mode="In" Type="Int32" />
+      <Parameter Name="inventoryStock" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateInventory">
+      <Parameter Name="inventoryID" Mode="In" Type="Int32" />
+      <Parameter Name="inventoryName" Mode="In" Type="String" />
+      <Parameter Name="inventoryPrice" Mode="In" Type="Int32" />
+      <Parameter Name="inventoryStock" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateUser">
+      <Parameter Name="userID" Mode="In" Type="Int32" />
+      <Parameter Name="userFirstName" Mode="In" Type="String" />
+      <Parameter Name="userLastName" Mode="In" Type="String" />
+      <Parameter Name="userName" Mode="In" Type="String" />
+      <Parameter Name="userPassword" Mode="In" Type="String" />
+      <Parameter Name="userEmail" Mode="In" Type="String" />
+      <Parameter Name="userPhoneNumber" Mode="In" Type="String" />
+      <Parameter Name="userStreet" Mode="In" Type="String" />
+      <Parameter Name="userCity" Mode="In" Type="String" />
+      <Parameter Name="userState" Mode="In" Type="String" />
+      <Parameter Name="userZipcode" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="UserDetails" ReturnType="Collection(GameOverGames.Models.UserDetails_Result)">
+      <Parameter Name="userFirstName" Mode="In" Type="String" />
+      <Parameter Name="userLastName" Mode="In" Type="String" />
+      <Parameter Name="userName" Mode="In" Type="String" />
+      <Parameter Name="userPassword" Mode="In" Type="String" />
+      <Parameter Name="userEmail" Mode="In" Type="String" />
+      <Parameter Name="userPhoneNumber" Mode="In" Type="String" />
+      <Parameter Name="userStreet" Mode="In" Type="String" />
+      <Parameter Name="userCity" Mode="In" Type="String" />
+      <Parameter Name="userState" Mode="In" Type="String" />
+      <Parameter Name="userZipcode" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="DisplayInventory_Result">
+    <Property Type="Int32" Name="inventoryID" Nullable="false" />
+    <Property Type="String" Name="inventoryName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="inventoryPrice" Nullable="true" />
+    <Property Type="Int32" Name="inventoryStock" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="DisplayUser_Result">
+    <Property Type="Int32" Name="userID" Nullable="false" />
+    <Property Type="String" Name="userFirstName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="userLastName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="userName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="userPassword" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="userEmail" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="userPhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="userStreet" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="userCity" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="userState" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="userZipcode" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetInventoryInfoByInventoryID_Result">
+    <Property Type="Int32" Name="inventoryID" Nullable="false" />
+    <Property Type="String" Name="inventoryName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="inventoryPrice" Nullable="true" />
+    <Property Type="Int32" Name="inventoryStock" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetUserInfoByUserID_Result">
+    <Property Type="Int32" Name="userID" Nullable="false" />
+    <Property Type="String" Name="userFirstName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="userLastName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="userName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="userPassword" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="userEmail" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="userPhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="userStreet" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="userCity" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="userState" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="userZipcode" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="InventoryDetails_Result">
+    <Property Type="Int32" Name="inventoryID" Nullable="false" />
+    <Property Type="String" Name="inventoryName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="inventoryPrice" Nullable="true" />
+    <Property Type="Int32" Name="inventoryStock" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="UserDetails_Result">
+    <Property Type="Int32" Name="userID" Nullable="false" />
+    <Property Type="String" Name="userFirstName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="userLastName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="userName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="userPassword" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="userEmail" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="userPhoneNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="userStreet" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="userCity" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="userState" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="userZipcode" Nullable="true" />
+  </ComplexType>
+</Schema>

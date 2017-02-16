@@ -1,0 +1,18 @@
+﻿ @model GameOverGames.Controllers.UserVM
+
+@{
+    ViewBag.Title = "DisplayEmployee";
+}
+
+<h2>Welcome</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <h1>Please select what you would like to Manage Below</h1>
+        <h2>
+            @Html.ActionLink("Show Inventory", "DisplayInventoryEmployee", "Inventory", new { area = "areaName", id = Session["ID"] }, null) |
+
+        @Html.ActionLink("Manage Customers", "DisplayListofCustomersforEmployee", "User", new { area = "areaName", id = Session["ID"] }, null)
+    </h2>
